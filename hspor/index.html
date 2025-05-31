@@ -1681,7 +1681,8 @@
 
 const container = document.getElementById('conteudo');
 
-    dados.forEach(item => {
+    dados.forEach((item, index) => {
+
       const card = document.createElement('div');
       card.className = 'card';
 
@@ -1690,7 +1691,8 @@ const container = document.getElementById('conteudo');
       card.innerHTML = `
         ${item.imagem ? `<img src="img_esp/${item.imagem}.jpg" alt="${item.origen}" class="card-img">` : ''}
         <div class="card-content">
-          <h2>
+		  
+		  <h2>
             <span style="color: black;">${item.origen}</span> → 
             <a href="${tradutorURL}" target="_blank" rel="noopener noreferrer" title="Ouvir pronúncia">${item.traducao}</a>
             <a href="${tradutorURL}" target="_blank" rel="noopener noreferrer" class="speaker-icon" title="Ouvir pronúncia">🔊</a>
@@ -1699,7 +1701,11 @@ const container = document.getElementById('conteudo');
           <!--${item.exemplo ? `<p><strong>Exemplo:</strong> ${item.exemplo}</p>` : ''}-->
           ${item.observacoes ? `<p><strong>Observações:</strong> ${item.observacoes}</p>` : ''}
           <!--${item.doblog ? `<p class="source"><a href="${item.doblog}" target="_blank">Fonte: Blog HispanoLuso</a></p>` : ''}-->
-		  <p align='right'><small><i>Falsos Cognatos em Português e Espanhol</i></small></p>
+
+
+		  <p align='right'><small><i> Falsos Cognatos em Português e Espanhol (${index + 1} de ${dados.length} )</i></small></p>
+
+		  
         </div>
       `;
 
