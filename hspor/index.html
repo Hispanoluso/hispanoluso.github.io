@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Falsos Cognatos</title>
+  <style>
+    :root {
+      --bg: #f9fafb;
+      --primary: #0d6efd;
+      --text: #333;
+      --card-bg: #fff;
+      --border: #ddd;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      overflow: visible;
+      position: relative;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    @media (min-width: 768px) {
+      .card {
+        flex-direction: row;
+        min-height: 250px;
+      }
+    }
+
+    .card-img {
+      flex-shrink: 0;
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      margin: -1.5rem -1.5rem 1rem -1.5rem;
+      border-radius: 12px 12px 0 0;
+    }
+
+    @media (min-width: 768px) {
+      .card-img {
+        width: 300px;
+        height: 100%;
+        margin: -1.5rem 0 -1.5rem -1.5rem;
+        border-radius: 12px 0 0 12px;
+      }
+    }
+
+    .card-content {
+      flex: 1;
+      padding-left: 0;
+    }
+
+    @media (min-width: 768px) {
+      .card-content {
+        padding-left: 1.5rem;
+      }
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .origem {
+      color: #000;
+      font-weight: bold;
+    }
+
+    .traducao {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .traducao:hover {
+      text-decoration: underline;
+    }
+
+    .speaker-icon {
+      margin-left: 0.3rem;
+      vertical-align: middle;
+      font-size: 1.1rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .card p {
+      margin: 0.6rem 0;
+      line-height: 1.5;
+    }
+
+    .source {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 1rem;
+    }
+	
+	
+  </style>
+  
+  
+</head>
+<body>
+
+  <header>Falsos Cognatos em Português e Espanhol</header>
+  
+  <div class="container" id="conteudo"></div>
+
+  <script>
+    const dados = [
+      {
+        "origen": "A marreta",
+        "traducao": "Amarreta",
+        "imagem": "amarreta",
+        "definicao": "Avarenta, mão de vaca.",
+        "doblog": "http://bloghispanoluso.blogspot.com.br/2015/09/amarreta-vs-marreta.html",
+        "exemplo": "es- 'Ella es tan amarreta que ni el martillo me presto.' = pt- Ela é tão avarenta que nem me emprestou a marreta.",
+        "observacoes": "A marreta se traduz ao espanhol como 'La masa'"
+      },
+      {
+        "origen": "Abalar",
+        "traducao": "Avalar",
+        "imagem": "avalar",
+        "definicao": "Garantir.",
+        "exemplo": "es- 'Avalar un préstamo te puede conmover' = pt- Garantir um empréstito pode te avalar",
+        "observacoes": "Pronuncia similar. Em espanhol a V e a B tem o mesmo som. Abalar se traduz ao espanhol como 'Conmover' ou  'conmocionar'"
+      },
+	  
+	  
+	{
+		"origen":"Aceitar",
+		"traducao":"Aceitar",
+		"imagem":"aceitar",
+		"definicao":"Colocar óleo.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/09/aceitar.html",
+		"exemplo":" es- 'Voy a aceitar el motor del auto' = pt- Vou colocar óleo no motor do carro",
+		"observacoes":"Aceitar se traduz ao espanhol como 'Aceptar'"
+	},
+	
+	{
+		"origen":"Acha",
+		"traducao":"Hacha",
+		"imagem":"hacha",
+		"definicao":"Machado.",
+		"exemplo":null,		
+		"observacoes":"Acha se traduz ao espanhol como 'Allá'"
+	},
+
+	
+	{
+		"origen":"Agasalho",
+		"traducao":"Agasajo",
+		"imagem":"agasajo",
+		"definicao":"Presente.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/09/agasalho-vs-agasajo.html",
+		"exemplo":" es- 'El señor se olvidó su abrigo junto con el agasajo' = pt- O senhor esqueceu seu agasalho junto com o presente.",
+		"observacoes":" Pronuncia similar. Agasalho se traduz ao espanhol como 'Abrigo'"
+	},
+	
+	{
+		"origen":"Aguinaldo",
+		"traducao":"Aguinaldo",
+		"imagem":"aguinaldo",
+		"definicao":"Décimo terceiro salário.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/09/aguinaldo.html",
+		"exemplo":" es- 'Por favor, deposita el aguinaldo en la cuenta del señor Aguinaldo' = pt- Por favor, deposite o décimo terceiro na conta do senhor Aguinaldo.",
+		"observacoes":""
+	},
+
+	{
+		"origen":"Alargar",
+		"traducao":"Alargar",
+		"imagem":"alargar",
+		"definicao":"Esticar.",
+		"exemplo":null,		
+		"observacoes":"Alargar se traduz ao espanhol como 'Ensanchar'"
+	},
+	
+	{
+		"origen":"Aleijado",
+		"traducao":"Alejado",
+		"imagem":"alejado",
+		"definicao":"Que está longe.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/09/aleijado-vs-alejado.html",
+		"exemplo":" es- 'Que alejado de todo vive tu amigo lisiado, no?' = pt- Que longe de tudo mora teu amigo aleijado, não?.",
+		"observacoes":" Pronuncia similar. Aleijado se traduz ao espanhol como 'lisiado'."
+	},
+
+	{
+		"origen":"Alça",
+		"traducao":"Alza",
+		"imagem":"alza",
+		"definicao":"Alza",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/09/alca-vs-alza.html",
+		"exemplo":" es- 'Si el me alza la valija talvez consigo agarrarla por la manija' = pt- Se ele levanta a mala talvez consigo pegá-la pela alça.",
+		"observacoes":" Pronuncia similar. Alça se traduz ao espanhol como 'manija' (de mala ou carteira)."
+	},
+
+	{
+		"origen":"Almeja",
+		"traducao":"Almeja",
+		"imagem":"almeja",
+		"definicao":"Tipo de molusco.",
+		"exemplo":null,		
+		"observacoes":"Almeja se traduz como 'desea'"
+	},
+
+
+	{
+		"origen":"Apanhar",
+		"traducao":"Apañar",
+		"imagem":"apanar",
+		"definicao":"Pegar alguma coisa; acolher; super-proteger.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/apanhar-vs-apanar.html",
+		"exemplo":" es- 'Por mas que haya conseguido apañar la pelota, los padres le dieron una paliza.' = pt- Por mais que ele tenha conseguido pegar a bola, ele teve que apanhar dos pais.",
+		"observacoes":" Apanhar em português se traduz ao espanhol como dar ou tomar 'una paliza' ou 'agarrar'"
+	},
+
+	{
+		"origen":"Apagar",
+		"traducao":"Apagar",
+		"imagem":"apagar",
+		"definicao":"Desligar. Combater o fogo.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/apagar.html",
+		"exemplo":" es- 'Voy a apagar la luz.' = pt- Vou desligar a luz. es- 'Tenemos que apagar el fuego.' = pt- Temos que extinguir o fogo.",
+		"observacoes":"Apagar se traduz para o espanhol como 'borrar'"
+	},
+	{
+		"origen":"Apelido",
+		"traducao":"Apellido",
+		"imagem":"apellido",
+		"definicao":"Sobrenome",
+		"exemplo":null,		
+		"observacoes":"Apelido se traduz para o espanhol como 'apodo' ou 'sobrenombre'"
+	},
+
+	{
+		"origen":"Apenado",
+		"traducao":"Apenado",
+		"imagem":"apenado",
+		"definicao":"Triste, afligido.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/apenado.html",
+		"exemplo":" es- 'Estoy apenado por lo que me has dicho.' = pt- Estou triste pelo que me tens dito.",
+		"observacoes":"Apenado se traduz para o espanhol como 'condenado'"
+	},
+
+	{
+		"origen":"Aposentado",
+		"traducao":"Aposentado",
+		"imagem":"aposentado",
+		"definicao":"Quem tem casa ou alojamento.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/aposentado.html",
+		"exemplo":"aposentado se traduz como 'jubilado'",
+		"observacoes":"aposentado se traduz como 'jubilado'"
+	},
+
+	
+	{
+		"origen":"Apurar",
+		"traducao":"Apurar",
+		"imagem":"apurar",
+		"definicao":"Apressar.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/apurar.html",
+		"exemplo":" es- 'El juez está apurando la documentación.' = pt- O juíz está apressando a documentação. es- 'El juez está contando los votos.' = pt- O juiz está apurando os votos.",
+		"observacoes":" Apurar se traduz como 'contar'"
+	},
+	{
+		"origen":"Aquecer",
+		"traducao":"Acaecer",
+		"imagem":"acaecer",
+		"definicao":"Acontecer",
+		"exemplo":null,		
+		"observacoes":" Aquecer se traduz como 'calentar'"
+	},
+	{
+		"origen":"Aquilo",
+		"traducao":"Alquilo",
+		"imagem":"alquilo",
+		"definicao":"Algugo",
+		"exemplo":null,		
+		"observacoes":"Aquilo se traduz como 'aquello'"
+	},
+	
+	{
+		"origen":"Arandela",
+		"traducao":"Arandela",
+		"imagem":"arandela",
+		"definicao":"Arruela.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/arandela.html",
+		"exemplo":" es- 'Necesito de una arandela para poner el candelabro en la pared.' = pt- Preciso de uma arruela para colocar a arandela na parede.",
+		"observacoes":"Arandela se traduz como 'luminária de pared'"
+	},
+	
+	
+	{
+		"origen":"Aranzel",
+		"traducao":"Arancel",
+		"imagem":"arancel",
+		"definicao":"Tarifa, taxa, preço de um serviço.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/aranzel-vs-arancel.html",
+		"exemplo":" es- 'Empezo hablando sobre el aumento del arancel, pero ahora no termina más su discurso.' = pt- Começou falando sobre o aumento da tarifa, mas agora já virou um aranzel.",
+		"observacoes":" Pronuncia similar. aranzel em português é 'discurso extenso, confuso e interminable' em espanhol(coloquialmente: 'sanata')"
+	},
+	{
+		"origen":"Arregalar",
+		"traducao":"Arreglar",
+		"imagem":"arreglar",
+		"definicao":"Consertar",
+		"exemplo":null,		
+		"observacoes":"Arregalhar se traduz como 'abrir mucho los ojos'"
+	},
+	{
+		"origen":"Arroto",
+		"traducao":"Ha roto",
+		"imagem":"haroto",
+		"definicao":"Tem quebrado",
+		"exemplo":null,		
+		"observacoes":"Pronuncia similar. Arroto se traduz como 'Eructo'"
+	},
+	{
+		"origen":"Aspas",
+		"traducao":"Aspas",
+		"imagem":"aspas",
+		"definicao":"pás, asas",
+		"exemplo":null,		
+		"observacoes":"Aspas se traduz como 'comillas'"
+	},
+	{
+		"origen":"Assinatura",
+		"traducao":"Asignatura",
+		"imagem":"asignatura",
+		"definicao":"Matéria de um curso",
+		"exemplo":null,		
+		"observacoes":"Pronuncia similar. Assinatura se traduz como 'firma'"
+	},
+	{
+		"origen":"Ata",
+		"traducao":"Ata",
+		"imagem":"ata",
+		"definicao":"Amarra",
+		"exemplo":null,		
+		"observacoes":"Ata se traduz como 'acta'"
+	},
+	
+	{
+		"origen":"Atacado",
+		"traducao":"Atacado",
+		"imagem":"atacado",
+		"definicao":"Agredido.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/atacado.html",
+		"exemplo":" es- 'El señor fue atacado en frente al mayorista del centro.' = pt- O senhor foi agredido na frente do atacado do centro.",
+		"observacoes":"Atacado se traduz como 'mayorista'"
+	},
+	
+	{
+		"origen":"Aula",
+		"traducao":"Aula",
+		"imagem":"aula",
+		"definicao":"Sala onde se ensina e/ou se aprende (local físico).",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/10/aula.html",
+		"exemplo":" es- 'No pudimos entrar en el aula para tener clase.' = pt- Não pudemos entrar na sala para ter aula.",
+		"observacoes":"Aula se traduz como 'clase'"
+	},
+	
+	{
+		"origen":"Azar",
+		"traducao":"Azar",
+		"imagem":"azar",
+		"definicao":"Acaso, aleatório.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/azar.html",
+		"exemplo":" es- 'Escogí al azar, pero tuve mala suerte...' = pt- Escolhi ao acaso, mas tive azar...",
+		"observacoes":"Azar se traduz como 'mala suerte'"
+	},
+	
+	{
+		"origen":"Babosa",
+		"traducao":"Babosa",
+		"imagem":"babosa",
+		"definicao":"Lesma.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/babosa.html",
+		"exemplo":" es- 'Hay una babosa andando en esa planta de aloe vera' = pt- Tem uma lesma andando nessa babosa",
+		"observacoes":"Babosa se traduz como 'Aloe vera'"
+	},
+	
+	{
+		"origen":"Balcão",
+		"traducao":"Balcón",
+		"imagem":"balcon",
+		"definicao":"Sacada, varanda.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/balcao-vs-balcon.html",
+		"exemplo":" es- 'Desde la mesada veo las flores en tu balcón' = pt- Desde o balcão vejo as flores na tua varanda",
+		"observacoes":"Balção se traduz como 'mesada'"
+	},
+	
+	{
+		"origen":"Baldear",
+		"traducao":"Baldear",
+		"imagem":"baldear",
+		"definicao":"Limpar usando o balde.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/baldear.html",
+		"exemplo":" es- 'Hay que baldear el piso de la estación de la combinación' = pt- Tem que limpar o chão da estação da baldeação",
+		"observacoes":"Baldear se traduz como 'combinar'"
+	},
+	{
+		"origen":"Barata",
+		"traducao":"Barata",
+		"imagem":"barata",
+		"definicao":"Em conta, económica",
+		"exemplo":null,		
+		"observacoes":"Barata se traduz como 'cucaracha'"
+	},
+	
+	{
+		"origen":"Barrilete",
+		"traducao":"Barrilete",
+		"imagem":"barrilete",
+		"definicao":"Pipa.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/barrilete.html",
+		"exemplo":" es- 'El barrilete se quedó prendido entre los caños de distribución' = pt- A pipa ficou presa entre os barriletes",
+		"observacoes":"Barrilete se traduz como 'caños de distribución'"
+	},
+	
+	{
+		"origen":"Batom",
+		"traducao":"Batón",
+		"imagem":"baton",
+		"definicao":"Bata feminina (ampla e confortável).",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/batom-vs-baton.html",
+		"exemplo":" es- 'Manchó su batón con lápiz de labio rojo' = pt- Manchou sua bata com batom vermelho",
+		"observacoes":" Pronuncia similiar. Batom se traduz como 'lápiz de labios'"
+	},
+	
+	{
+		"origen":"Beca",
+		"traducao":"Beca",
+		"imagem":"beca",
+		"definicao":"Bolsa, ajuda de custo para estudo ou trabalho.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/beca.html",
+		"exemplo":" es- 'Antes de terminar el período de la beca el se compró una toga' = pt- Antes de terminar o período da bolsa ele comprou uma beca",
+		"observacoes":"Beca se traduz como 'toga'"
+	},
+	
+	{
+		"origen":"Bengala",
+		"traducao":"Bengala",
+		"imagem":"bengala",
+		"definicao":"Sinalizador.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/11/bengala.html",
+		"exemplo":" es- 'El señor soltó el bastón y disparo la bengala' = pt- O senhor largou a bengala e disparou o sinalizador",
+		"observacoes":"Bengala se traduz como 'bastón'"
+	},
+	
+	{
+		"origen":"Berro",
+		"traducao":"Berro",
+		"imagem":"berro",
+		"definicao":"Agrião (Planta comestível).",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/12/berro.html",
+		"exemplo":" es- 'Cuando estaba por comerse un berro podrido la madre le pego un grito' = pt- Quando estava por comer um agrião podre a mãe deu um berro",
+		"observacoes":"Berro se traduz como 'grito'"
+	},
+
+	{
+		"origen":"Berço",
+		"traducao":"Verso",
+		"imagem":"verso",
+		"definicao":"Cada linha de um poema",
+		"exemplo":null,		
+		"observacoes":" Pronuncia similar. B e V iguais em espanhol e ç parecida dcom a s. Berço se traduz como 'cuna'"
+	},
+	{
+		"origen":"Bilhão",
+		"traducao":"Billón",
+		"imagem":"billon",
+		"definicao":"Trilhão",
+		"exemplo":null,		
+		"observacoes":"Bilhão se traduz como 'mil millones'"
+	},
+
+	{
+		"origen":"Boçal",
+		"traducao":"Bozal",
+		"imagem":"bozal",
+		"definicao":"Focinheira",
+		"exemplo":null,		
+		"observacoes":"Boçal se traduz como 'rudo' ou 'grosseiro'"
+	},
+
+	
+	{
+		"origen":"Bolsa",
+		"traducao":"Bolsa",
+		"imagem":"bolsa",
+		"definicao":"Sacola ou saco.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/12/bolsa.html",
+		"exemplo":" es- 'Al final de la beca le regalaron una bolsa del instituto' = pt- No final da bolsa foi presenteado com uma sacola do instituto",
+		"observacoes":"Bolsa se traduz como 'beca'"
+	},
+	
+	
+	{
+		"origen":"Botijão",
+		"traducao":"Botellón",
+		"imagem":"botellon",
+		"definicao":"Garrafa grande",
+		"exemplo":null,		
+		"observacoes":"Botijão se traduz como 'garrafa'"
+	},
+	
+	{
+		"origen":"Borracha",
+		"traducao":"Borracha",
+		"imagem":"borracha",
+		"definicao":"Bêbada.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2015/12/borracha.html",
+		"exemplo":" es- 'Estaba tan borracha que casi se come una goma' = pt- Estava tão bêbada que quase come uma borracha",
+		"observacoes":"Borracha se traduz como 'goma'"
+	},
+	
+	{
+		"origen":"Brega",
+		"traducao":"Brega",
+		"imagem":"brega",
+		"definicao":"Briga, luta",
+		"exemplo":null,		
+		"observacoes":"Brega se traduz como 'mersa'"
+	},
+
+	
+	{
+		"origen":"Brincar",
+		"traducao":"Brincar",
+		"imagem":"brincar",
+		"definicao":"Pular.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/01/brincar.html",
+		"exemplo":" es- '¿Jugamos a brincar?' pt- Brinquemos de pular?",
+		"observacoes":"Brincar se traduz como 'jugar'"
+	},
+	
+	{
+		"origen":"Brincos",
+		"traducao":"Brincos",
+		"imagem":"brincos",
+		"definicao":"Pulos.",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/01/brincos.html",
+		"exemplo":" es- 'Dio tantos brincos que se le cayeron sus aritos' pt- Deu tantos pulos que caíram seus brincos",
+		"observacoes":"Brincos se traduz como 'aritos'"
+	},
+
+
+	{
+		"origen":"Cacho",
+		"traducao":"Cacho",
+		"imagem":"cacho",
+		"definicao":"Pedaço ou porção (também usado como apelido).",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/01/cacho.html",
+		"exemplo":" es- 'Cuando estaba por comerse una banana del racimo el amigo le pidió un cacho de la fruta' pt- Quando estava por comer uma banana do cacho o amigo lhe pediu um pedaço da fruta",
+		"observacoes":"Cacho se traduz como 'racimo'"
+	},
+	
+	{
+		"origen":"Cadeira",
+		"traducao":"Cadera",
+		"imagem":"cadera",
+		"definicao":"Quadril",
+		"observacoes":"Cadeira se traduz como 'silla'"
+		
+	},
+	
+	{
+		"origen":"Calha",
+		"traducao":"Calla",
+		"imagem":"calla",
+		"definicao":"Cala",
+		"observacoes":"Calha se traduz como 'canaleta'"
+		
+	},
+	{
+		"origen":"Camarote",
+		"traducao":"Camarote",
+		"imagem":"camarote",
+		"definicao":"Compartimento com camas dos barcos",
+		"observacoes":"Camarote se traduz como 'palco'"
+		
+	},
+
+	{
+		"origen":"Canas",
+		"traducao":"Canas",
+		"imagem":"canas",
+		"definicao":"Cabelos grisalhos",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/01/canas.html",
+		"exemplo":" es- 'Año trás año, el hombre ya con canas continúa cortando las cañas' pt- Ano após ano, o homem já com cabelos grisalhos continua cortando as canas",
+		"observacoes":"Canas se traduz como 'cañas'"
+	},
+	
+	{
+		"origen":"Carreta",
+		"traducao":"Carreta",
+		"imagem":"carreta",
+		"definicao":"Charrete",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/01/carreta.html",
+		"exemplo":" es- 'Vendió la carreta para comprar el acoplado del camión' pt- Vendeu a charrete para comprar a carreta do caminhão",
+		"observacoes":"Carreta se traduz como 'acoplado'"
+	},
+	{
+		"origen":"Cartão",
+		"traducao":"Cartón",
+		"imagem":"carton",
+		"definicao":"Papelão",
+		"observacoes":"Cartão se traduz como 'tarjeta'"
+		
+	},
+
+	
+	{
+		"origen":"Cena",
+		"traducao":"Cena",
+		"imagem":"cena",
+		"definicao":"Jantar ou ceia",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/01/cena.html",
+		"exemplo":" es- 'El discurso de la cena fue la mejor escena' pt- O discurso do jantar foi a melhor cena",
+		"observacoes":"Cena se traduz como 'escena'"
+	},
+	
+	{
+		"origen":"Chocar",
+		"traducao":"Chocar",
+		"imagem":"chocar",
+		"definicao":"Bater ou quebrar",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/chocar.html",
+		"exemplo":" es- 'Al chocar el auto contra el gallinero, la gallina incubo el huevo' pt- Ao bater o carro contra o galinheiro, a galinha chocou o ovo",
+		"observacoes":"Chocar se traduz como 'incubar'"
+	},
+	
+	{
+		"origen":"Coelho",
+		"traducao":"Cuello",
+		"imagem":"cuello",
+		"definicao":"Pescoço",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/coelho-vs-cuello.html",
+		"exemplo":" es- 'El conejo se rompió el cuello' pt- O coelho quebrou o pescoço",
+		"observacoes":" Pronúncia similar. Coelho em português se traduz como 'conejo' em espanhol"
+	},
+	
+	
+	
+	{
+		"origen":"Consertar",
+		"traducao":"Concertar",
+		"imagem":"concertar",
+		"definicao":"Organizar ou combinar",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/consertar-vs-concertar.html",
+		"exemplo":" es- 'Concertamos de arreglar la heladera más tarde' pt- Combinamos de consertar a geladeira mais tarde",
+		"observacoes":" consertar em português se traduz como 'arreglar' em espanhol"
+	},
+	
+	{
+		"origen":"Conosco",
+		"traducao":"Conozco",
+		"imagem":"conozco",
+		"definicao":"Conheço",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/conosco-vs-conozco.html",
+		"exemplo":" es- '- Usted lo conoce? - Sí, lo conozco. - Entonces venga con nosotros...' pt- - Você o conhece? - Sim, o conheço. - Então venha conozco...",
+		"observacoes":" conosco em português se traduz como 'con nosotros' em espanhol"
+	},
+	
+
+	
+	{
+		"origen":"Corpinho",
+		"traducao":"Corpiño",
+		"imagem":"corpino",
+		"definicao":"Sutiã",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/corpinho-vs-corpino.html",
+		"exemplo":" es- 'Con este cuerpito que tenés te conviene usar este corpiño' pt- Com este corpinho que você tem te convém usar este sutiã",
+		"observacoes":" Pronúncia similar. Corpinho em português  se traduz como 'cuerpito' em espanhol"
+	},
+	
+	{
+		"origen":"Criança",
+		"traducao":"Crianza",
+		"imagem":"crianza",
+		"definicao":"Ato de criar",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/crianca-vs-crianza.html",
+		"exemplo":" ",
+		"observacoes":" Criança em português se traduz como 'niño(a)' em espanhol"
+	},
+	
+	{
+		"origen":"Cueca",
+		"traducao":"Cueca",
+		"imagem":"cueca",
+		"definicao":"Dança folclórica",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/cueca.html",
+		"exemplo":" es- 'Se le cayeron los calzoncillos cuando bailava la cueca' pt- Caiu sua cueca quando dançava a cueca",
+		"observacoes":" Cueca em português  se traduz como 'calzoncillos' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Despido",
+		"traducao":"Despido",
+		"imagem":"despido",
+		"definicao":"Demissão",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/02/despido.html",
+		"exemplo":" es- 'Lo despido del trabajo, no toleramos empleados desnudos' pt- O demito do trabalho, não toleramos funcionários despidos",
+		"observacoes":" Despido em português se traduz como 'desnudo' em espanhol"
+	},
+	
+	{
+		"origen":"Doce",
+		"traducao":"Doce",
+		"imagem":"doce",
+		"definicao":"Número Doze (12)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/doce.html",
+		"exemplo":" es- 'Quiero doce dulces, por favor' pt- Quero doze doces, por favor",
+		"observacoes":" Doce em português se traduz como 'dulce' em espanhol"
+	},
+	
+	{
+		"origen":"Dos",
+		"traducao":"Dos",
+		"imagem":"dos",
+		"definicao":"Número Dois (2)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/dos.html",
+		"exemplo":" es- 'Esos dos son los elegidos de los jurados' pt- Esses dois são os escolhidos dos jurados",
+		"observacoes":" dos em português se traduz como 'de los' em espanhol"
+	},
+	
+	{
+		"origen":"Embolado",
+		"traducao":"Embolado",
+		"imagem":"embolado",
+		"definicao":"Chateado",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/embolado.html",
+		"exemplo":" es- 'Estoy muy embolado, pero tengo que arreglar mis ropas que están todas mezcladas' pt- Estou muito chateado, mas tenho que arrumar minhas roupas que estão emboladas",
+		"observacoes":" Embolado em português se traduz como 'mezclado' ou 'hecho un bollo' em espanhol"
+	},
+	
+	{
+		"origen":"Embrulhado",
+		"traducao":"Embrollo",
+		"imagem":"embrollo",
+		"definicao":"Enrolado, complicado, confuso",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/embrulho-vs-embrollo.html",
+		"exemplo":" es- 'El paquete está un embrollo' pt- O embrulho está confuso",
+		"observacoes":" Pronúncia similar. Embrulho em português se traduz como 'paquete' em espanhol"
+	},
+	
+	{
+		"origen":"Engraçado",
+		"traducao":"Engrasado",
+		"imagem":"engrasado",
+		"definicao":"Engraxado",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/engracado-vs-engrasado.html",
+		"exemplo":" es- 'Estaba muy engrasado, fue bien divertido' pt- Estava muito engraxado, foi bem engraçado",
+		"observacoes":" Engraçado em português se traduz como divertido em espanhol"
+	},
+	
+	
+	{
+		"origen":"Embaraçada",
+		"traducao":"Embarazada",
+		"imagem":"embarazada",
+		"definicao":"Grávida",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/embaracada-vs-embarazada.html",
+		"exemplo":" es- 'Ella estaba avergonzada de salir a la calle embarazada' pt- Ela estava embaraçada de sair à rua grávida",
+		"observacoes":" Embaraçada em português se traduz como 'avergonzada' em espanhol"
+	},
+	
+	{
+		"origen":"Escova",
+		"traducao":"Escoba",
+		"imagem":"escoba",
+		"definicao":"Vassoura",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/escova-vs-escoba.html",
+		"exemplo":" es- 'Quiero hacer el tratamiento para alisarme el pelo, lo quiero liso como las cerdas de una escoba' pt- Quero fazer escova para meu cabelo, quero ele liso como os fios de uma vassoura",
+		"observacoes":" Pronúncia similar (a V e a B se pronunciam igual em espanhol). Escova em português se traduz como 'plancha' ou 'tratamiento para alisar el pelo enrulado' em espanhol"
+	},
+	
+	{
+		"origen":"Escritório",
+		"traducao":"Escritorio",
+		"imagem":"escritorio",
+		"definicao":"Escrivaninha",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/escritorio.html",
+		"exemplo":" es- 'Pusieron un escritorio nuevo hoy en mi oficina de trabajo' pt- Colocaram uma escrivaninha nova hoje no escritório",
+		"observacoes":" Escritório em português se traduz como 'oficina' ou 'lugar de trabajo' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Esquisita",
+		"traducao":"Exquisita",
+		"imagem":"exquisita",
+		"definicao":"Deliciosa, refinada, gostosa",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/03/esquisita-vs-exquisita.html",
+		"exemplo":" es- 'La comida parecia medio rara, pero después de probarla es muy exquisita' pt- A comida parecia meio esquisita, mas depois de experimentá-la é bem deliciosa",
+		"observacoes":" Pronúncia similar. Esquisita em português se traduz como 'rara' em espanhol"
+	},
+	
+	{
+		"origen":"Estafa",
+		"traducao":"Estafa",
+		"imagem":"estafa",
+		"definicao":"Fraude ou tramóia",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/estafa.html",
+		"exemplo":" es- 'Estoy muy estresado por la estafa que sufrí' pt- Estou muito estafado pela fraude que sofri",
+		"observacoes":" Estafa em português se traduz como 'agotamiento mental' em espanhol"
+	},
+	
+	{
+		"origen":"Estofado",
+		"traducao":"Estofado",
+		"imagem":"estofado",
+		"definicao":"Ensopado",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/estofado.html",
+		"exemplo":" es- 'Cayó parte del estofado arriba del tapizado' pt- Caiu parte do ensopado em cima do estofado",
+		"observacoes":" Estofado em português se traduz como 'tapizado' em espanhol"
+	},
+	
+	{
+		"origen":"Estrado",
+		"traducao":"Estrado",
+		"imagem":"estrado",
+		"definicao":"Palanque, tablado",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/estrado.html",
+		"exemplo":" es- 'En el estrado, recordó que se habia roto el elástico de su cama' pt- No palanque, lembrou que tinha quebrado o estrado",
+		"observacoes":" Estrado em português se traduz como 'elástico de la cama' em espanhol"
+	},
+	
+	{
+		"origen":"Estufa",
+		"traducao":"Estufa",
+		"imagem":"estufa",
+		"definicao":"Aquecedor",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/estufa.html",
+		"exemplo":" es- 'Estaba tan caluroso en el invernadero que parecia haber una estufa prendida' pt- Estava tão quente na estufa que parecia ter um aquecedor ligado",
+		"observacoes":" Estufa em português se traduz como 'invernadero' em espanhol"
+	},
+	
+	{
+		"origen":"Fraco",
+		"traducao":"Flaco",
+		"imagem":"flaco",
+		"definicao":"Magro",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/fraco-vs-flaco.html",
+		"exemplo":" es- 'No solo es flaco, como también es débil' pt- Não só é magro, como também é fraco",
+		"observacoes":" Pronúncia similar. Fraco em português se traduz como 'débil' em espanhol"
+	},
+	
+
+	{
+		"origen":"Franja",
+		"traducao":"Franja",
+		"imagem":"franja",
+		"definicao":"Faixa",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/franja.html",
+		"exemplo":" es- 'Me cuesta andar en la franja con el flequillo en mi cara' pt- É difícil para mim andar na faixa com a franja na minha cara",
+		"observacoes":" Franja em português se traduz como 'flequillo' em espanhol"
+	},
+	
+	{
+		"origen":"Frota",
+		"traducao":"Frota",
+		"imagem":"frota",
+		"definicao":"Esfrega",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/frota.html",
+		"exemplo":" es- 'El vendedor frota la lampara y desea por una nueva flota de veículos' pt- O vendedor esfrega a lâmpada e deseja por uma nova frota de veículos",
+		"observacoes":" Frota em português se traduz como 'flota' em espanhol"
+	},
+	
+	{
+		"origen":"Galera",
+		"traducao":"Galera",
+		"imagem":"galera",
+		"definicao":"Cartola",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/galera.html",
+		"exemplo":" es- 'Toda la barra de amigos se puso una galera en la cabeza para sacar una foto' pt- Toda a galera colocou uma cartola na cabeça para tirar uma foto",
+		"observacoes":" Galera em português se traduz como 'barra de amigos' em espanhol"
+	},
+
+	{
+		"origen":"Galho",
+		"traducao":"Gallo",
+		"imagem":"gallo",
+		"definicao":"Galo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/04/galho-vs-gallo.html",
+		"exemplo":" es- 'El gallo picotea la rama' pt- O galo dá bicadas no galho",
+		"observacoes":" Pronúncia similar. Galho em português se traduz como 'rama' em espanhol"
+	},
+	
+	
+	
+	
+	
+	{
+		"origen":"Guizo",
+		"traducao":"Guiso",
+		"imagem":"guiso",
+		"definicao":"Ensopado",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/05/guizo-vs-guiso.html",
+		"exemplo":" es- 'Después de comer este guiso estoy listo para tocar el cascabel' pt- Depois de comer este ensopado estou pronto para tocar o guizo",
+		"observacoes":" Pronúncia similar. Guizo em português se traduz como 'cascabel' em espanhol"
+	},
+	
+	{
+		"origen":"Goma",
+		"traducao":"Goma",
+		"imagem":"goma",
+		"definicao":"Borracha",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/05/goma.html",
+		"exemplo":" es- 'Estaba almidonando una remera y sin querer cayó un poco de almidón en mi goma de borrar' pt- Estava engomando uma camiseta e sem querer caiu um pouco de goma na minha borracha",
+		"observacoes":" Goma em português se traduz como 'almidón' em espanhol"
+	},
+	
+	{
+		"origen":"Grana",
+		"traducao":"Grana",
+		"imagem":"grana",
+		"definicao":"Cor grená",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/05/grana.html",
+		"exemplo":" es- 'No tengo dinero para comprar ese buso grana' pt- Não tenho grana para comprar esse moletom grená",
+		"observacoes":" Grana em português se traduz como 'dinero' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Ladra",
+		"traducao":"Ladra",
+		"imagem":"ladra",
+		"definicao":"Ato de latir",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/05/ladra.html",
+		"exemplo":" es- 'El perro le ladra a la ladrona' pt- O cachorro late à ladra",
+		"observacoes":" Ladra em português se traduz como 'ladrona' em espanhol"
+	},
+
+	{
+		"origen":"Ladrilho",
+		"traducao":"Ladrillo",
+		"imagem":"ladrillo",
+		"definicao":"Tijolo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/05/ladrilho-vs-ladrillo.html",
+		"exemplo":" es- 'No sirve usar ladrillo, hay que usar azulejo' pt- Não serve usar tijolo, tem que usar ladrilho",
+		"observacoes":" Pronúncia similar. Ladrilho em português se traduz como 'azulejo' em espanhol"
+	},
+
+
+	{
+		"origen":"Lapiseira",
+		"traducao":"Lapicera",
+		"imagem":"lapicera",
+		"definicao":"Caneta (de tinta)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/05/lapiseira-vs-lapicera.html",
+		"exemplo":" es- 'En vez de traer la lapicera traje el lápiz automático' pt- Em vez de trazer a caneta trouxe a lapiseira",
+		"observacoes":" Pronúncia similar. Lapiseira em português se traduz como 'lápiz automático' ou 'portaminas' em espanhol"
+	},
+
+	{
+		"origen":"Largo",
+		"traducao":"Largo",
+		"imagem":"largo",
+		"definicao":"Comprimento",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/06/largo.html",
+		"exemplo":" es- 'Tres centímetros de ancho y cuatro centímetros de largo' pt- Três centímetros de largo e quatro centímetros de comprimento",
+		"observacoes":" Largo em português se traduz como 'ancho' em espanhol"
+	},
+
+	{
+		"origen":"Legenda",
+		"traducao":"Leyenda",
+		"imagem":"leyenda",
+		"definicao":"Lenda",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/06/legenda-vs-leyenda.html",
+		"exemplo":" es- 'En el subtitulo estaba escrito: El es una leyenda' pt- Na legenda estava escrito: Ele é uma lenda",
+		"observacoes":" Pronúncia similar. Legenda em português se traduz como 'subtitulo' em espanhol"
+	},
+
+	{
+		"origen":"Lustre",
+		"traducao":"Lustre",
+		"imagem":"lustre",
+		"definicao":"Ato de dar brilho ou polimento",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/06/lustre.html",
+		"exemplo":" es- 'Ayer lustré la araña del living' pt- Ontem poli o lustre da sala de estar",
+		"observacoes":" Lustre em português se traduz como 'araña' em espanhol"
+	},
+
+	{
+		"origen":"Maestro",
+		"traducao":"Maestro",
+		"imagem":"maestro",
+		"definicao":"Mestre",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/06/maestro.html",
+		"exemplo":" es- 'Hoy soy director de orquestra gracias a mi maestro del colegio' pt- Hoje sou maestro graças ao meu professor da escola",
+		"observacoes":" Maestro em português se traduz como 'director de orquestra' em espanhol"
+	},
+
+	{
+		"origen":"Mala",
+		"traducao":"Mala",
+		"imagem":"mala",
+		"definicao":"Mulher má, vilã",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/07/mala.html",
+		"exemplo":" es- 'La mala de la película era la dueña de la valija' pt- A vilã do filme era a dona da mala",
+		"observacoes":" Mala em português se traduz como 'valija' ou 'maleta' em espanhol"
+	},
+
+	{
+		"origen":"Manco",
+		"traducao":"Manco",
+		"imagem":"manco",
+		"definicao":"Sem braço ou mão",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/07/manco.html",
+		"exemplo":" es- 'El manco y el cojo' pt- O cotoco e o manco",
+		"observacoes":" Manco em português se traduz como 'cojo' ou 'rengo' em espanhol"
+	},
+
+	{
+		"origen":"Mariposa",
+		"traducao":"Mariposa",
+		"imagem":"mariposa",
+		"definicao":"Borboleta",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/07/mariposa.html",
+		"exemplo":" es- 'Esta es una mariposa diurna y la otra una mariposa nocturna' pt- Esta é uma borboleta e a outra uma mariposa",
+		"observacoes":" Mariposa em português se traduz como 'mariposa nocturna' em espanhol"
+	},
+
+
+	{
+		"origen":"Mercearia",
+		"traducao":"Mercería",
+		"imagem":"merceria",
+		"definicao":"Armarinho ou loja de aviamentos",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/07/mercearia-vs-merceria.html",
+		"exemplo":" es- 'Doblando a la izquierda está el almacén y en frente está la mercería' pt- Virando à esquerda está a mercearia e em frente está o armarinho",
+		"observacoes":" Pronúncia similar. Mercearia em português se traduz como 'almacén' em espanhol"
+	},
+
+
+	{
+		"origen":"Moço",
+		"traducao":"Mozo",
+		"imagem":"mozo",
+		"definicao":"Garçom",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/08/moco-vs-mozo.html",
+		"exemplo":" es- 'El joven llamó al mozo' pt- O moço chamou o garçom",
+		"observacoes":" Moço em português se traduz como 'joven' em espanhol"
+	},
+
+	{
+		"origen":"Mole",
+		"traducao":"Mole",
+		"imagem":"mole",
+		"definicao":"Grande, volumoso",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/08/mole.html",
+		"exemplo":" es- 'Esa torta es una mole, pero es bien blanda' pt- Esse bolo é grande, mas é bem mole",
+		"observacoes":" Mole em português se traduz como 'blando/a' ou 'suave' em espanhol"
+	},
+
+	{
+		"origen":"Molestar",
+		"traducao":"Molestar",
+		"imagem":"molestar",
+		"definicao":"Incomodar",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/08/molestar.html",
+		"exemplo":" es- ' Molestar al abusar sexualmente ' pt- Incomodar ao molestar",
+		"observacoes":" Molestar em português se traduz como 'asedio sexual' em espanhol"
+	},
+
+	{
+		"origen":"Morro",
+		"traducao":"Morro",
+		"imagem":"morro",
+		"definicao":"Focinho",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/08/morro.html",
+		"exemplo":" es- 'El morro de mi perro se parece a un cerro nevado' pt- O focinho do meu cachorro se parece a um morro nevado ",
+		"observacoes":" Morro em português se traduz como 'cerro' ou 'colina' em espanhol"
+	},
+
+	{
+		"origen":"Ninho",
+		"traducao":"Niño",
+		"imagem":"nino",
+		"definicao":"Criança",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/08/ninho-vs-nino.html",
+		"exemplo":" es- 'El niño encontró un nido de pájaros' pt- A criança encontrou um ninho de pássaros",
+		"observacoes":" Pronúncia similar. Ninho em português se traduz como 'nido' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Oficina",
+		"traducao":"Oficina",
+		"imagem":"oficina",
+		"definicao":"Escritório",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/08/oficina.html",
+		"exemplo":" es- 'Cuando termines en la oficina no te olvides de ir al taller' pt- Quando você termine no escritório não te esquece de passar na oficina",
+		"observacoes":" Oficina em português se traduz como 'taller' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Osso",
+		"traducao":"Oso",
+		"imagem":"oso",
+		"definicao":"Urso",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/09/osso-vs-oso.html",
+		"exemplo":" es- 'Esto es un hueso de oso' pt- Isto é um osso de urso",
+		"observacoes":" Osso em português se traduz como 'hueso' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Pantalha",
+		"traducao":"Pantalla",
+		"imagem":"pantalla",
+		"definicao":"Tela de computador, TV ou cinema",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/10/pantalha-vs-pantalla.html",
+		"exemplo":" es- 'Sacá la tulipa de adelante de la pantalla' pt- Tira a pantalha da frente da tela",
+		"observacoes":" Pronúncia similar. Pantalha em português se traduz como 'tulipa de velador' em espanhol"
+	},
+	
+	{
+		"origen":"Parado",
+		"traducao":"Parado",
+		"imagem":"parado",
+		"definicao":"Em pé",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/10/parado.html",
+		"exemplo":" es- 'Ustedes quedense quietos sentados, los demás parados' pt- Vocês fiquem parados sentados, os demais em pé",
+		"observacoes":" Parado em português se traduz como 'quieto' em espanhol"
+	},
+	
+	{
+		"origen":"Pasta",
+		"traducao":"Pasta",
+		"imagem":"pasta",
+		"definicao":"Massa (macarrão)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/10/pasta.html",
+		"exemplo":" es- 'Cayó pasta en mi carpeta' pt- Caiu massa na minha pasta",
+		"observacoes":" Pasta em português se traduz como 'carpeta' em espanhol"
+	},
+	
+	{
+		"origen":"Patente",
+		"traducao":"Patente",
+		"imagem":"patente",
+		"definicao":"Placa do carro",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/10/patente.html",
+		"exemplo":" es- 'Si tu grado militar es inferior, tendrás que limpiar las patentes de los autos' pt- Se tua patente militar é inferior, terás que limpar as placas dos carros",
+		"observacoes":" Patente em português se traduz como 'grado militar' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Pegada",
+		"traducao":"Pegada",
+		"imagem":"pegada",
+		"definicao":"Colada, grudada, perto, potência de um chute",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/10/pegada.html",
+		"exemplo":" es- 'Esta huella no sale, parece que está pegada al piso' pt- Esta pegada não sai, parece que está grudada ao chão",
+		"observacoes":" Pegada em português se traduz como 'huella' ou 'pisada' em espanhol"
+	},
+	
+	{
+		"origen":"Pelado",
+		"traducao":"Pelado",
+		"imagem":"pelado",
+		"definicao":"Careca",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/10/pelado.html",
+		"exemplo":" es- 'El pelado esta desnudo' pt- O careca está pelado",
+		"observacoes":" Pelado em português se traduz como 'desnudo' em espanhol"
+	},
+	
+	{
+		"origen":"Película",
+		"traducao":"Película",
+		"imagem":"pelicula",
+		"definicao":"Filme",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/10/pelicula.html",
+		"exemplo":" es- 'Queria tener un filme oscuro para las ventanas de mi auto, igual al que vimos en la película' pt- Queria ter uma película para as janelas do meu carro, igual a que vimos no filme",
+		"observacoes":" Película em português se traduz como 'filme oscuro' ou 'polarizado' em espanhol"
+	},
+	
+	{
+		"origen":"Pêlo",
+		"traducao":"Pelo",
+		"imagem":"pelo",
+		"definicao":"Cabelo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/pelo.html",
+		"exemplo":" es- 'Mis pelos de la cabeza se mezclaron con mis pelos del cuerpo' pt- Meus cabelos se misturaram com meus pêlos",
+		"observacoes":" Pêlo em português se traduz como 'vello' em espanhol"
+	},
+	
+
+	
+	{
+		"origen":"Piegas",
+		"traducao":"Pliegas",
+		"imagem":"pliegas",
+		"definicao":"Ato de fazer dobras (pliegue = dobra)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/piegas-vs-pliegas.html",
+		"exemplo":" es- 'Si pliegas las hojas y las pintas de rosa serán regalos demasiado melosos' pt- Se faz dobras nas folhas e as pintas de rosa, serão presentes bem piegas",
+		"observacoes":" Pronúncia similar. Piegas em português se traduz como 'excesivamente sentimental' ou 'meloso' em espanhol"
+	},
+	
+	{
+		"origen":"Pipa",
+		"traducao":"Pipa",
+		"imagem":"pipa",
+		"definicao":"Cachimbo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/pipa.html",
+		"exemplo":" es- 'Levante el barrilete con el humo de la pipa' pt- Levantei a pipa com a fumaça do cachimbo",
+		"observacoes":" Pipa em português se traduz como 'barrilete' em espanhol"
+	},
+	
+	{
+		"origen":"Poente",
+		"traducao":"Puente",
+		"imagem":"puente",
+		"definicao":"Ponte",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/poente-vs-puente.html",
+		"exemplo":" es- 'El sol poniente atrás del puente' pt- O sol poente atrás da ponte",
+		"observacoes":" Pronúncia similar. Poente em português se traduz como 'poniente' em espanhol"
+	},
+	
+	{
+		"origen":"Polvo",
+		"traducao":"Polvo",
+		"imagem":"polvo",
+		"definicao":"Pó ou poeira",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/polvo.html",
+		"exemplo":" es- 'El pulpo cayó encima del polvo' pt- O polvo caiu em cima do pó",
+		"observacoes":" Polvo em português se traduz como 'pulpo' em espanhol"
+	},
+
+	
+	{
+		"origen":"Prender",
+		"traducao":"Prender",
+		"imagem":"prender",
+		"definicao":"Conectar, ligar, acender",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/prender.html",
+		"exemplo":" es- 'Después de agarrar la vela el la prendio' pt- Depois de pegar a vela ele a acendeu",
+		"observacoes":" Prender em português se traduz como 'agarrar' em espanhol"
+	},
+	
+	{
+		"origen":"Prolixo",
+		"traducao":"Prolijo",
+		"imagem":"prolijo",
+		"definicao":"Arrumado ou organizado",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/prolixo-vs-prolijo.html",
+		"exemplo":" es- 'Es prolijo pero muy zanatero' pt- É organizado mas muito prolixo",
+		"observacoes":" Pronúncia similar. Prolixo em português se traduz informalmente como 'zanatero' ou 'sanatero' em espanhol"
+	},
+	
+	{
+		"origen":"Propina",
+		"traducao":"Propina",
+		"imagem":"propina",
+		"definicao":"Gorjeta",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/propina.html",
+		"exemplo":" es- 'Le dio la propina al mozo y la coima al dueño' pt- Deu lhe a gorjeta ao garçom e a propina ao dono",
+		"observacoes":" Propina em português se traduz como 'coima' em espanhol"
+	},
+	
+	{
+		"origen":"Quadril",
+		"traducao":"Cuadril",
+		"imagem":"cuadril",
+		"definicao":"Tipo de corte de carne bovina (Picanha)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/quadril-vs-cuadril.html",
+		"exemplo":" es- 'Mueve la cadera si te gusta la tapa de cuadril' pt- Move o quadril se gostas da picanha",
+		"observacoes":" Quadril em português se traduz como 'cadera' em espanhol"
+	},
+
+
+	{
+		"origen":"Queda",
+		"traducao":"Queda",
+		"imagem":"queda",
+		"definicao":"Fica",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/11/queda.html",
+		"exemplo":" pt- 'Onde fica o treinamento de queda livre?' es- Donde queda el entrenamiento de caída libre?",
+		"observacoes":" Queda se traduz ao espanhol como 'caída'"
+	},
+
+	
+	
+	{
+		"origen":"Quitar",
+		"traducao":"Quitar",
+		"imagem":"quitar",
+		"definicao":"Tirar",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/12/quitar.html",
+		"exemplo":" es- 'Hay que quitar el dinero de los bolsillos para pagar las deudas' pt- Tem que tirar o dinheiro dos bolsos para quitar as dívidas",
+		"observacoes":" Quitar em português se traduz como 'pagar deuda' em espanhol"
+	},
+	
+	{
+		"origen":"Racha",
+		"traducao":"Racha",
+		"imagem":"racha",
+		"definicao":"Período de tempo curto de boa ou má sorte",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/12/racha.html",
+		"exemplo":" es- 'Voy a continuar con las picadas porque estoy con una buena racha' pt- Continuarei com os rachas porque estou com uma onda de boa sorte",
+		"observacoes":" Racha em português se traduz informalmente como 'picada' em espanhol"
+	},
+	
+	{
+		"origen":"Rachada",
+		"traducao":"Rayada",
+		"imagem":"rayada",
+		"definicao":"Riscada ou listrada",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/12/rachada-vs-rayada.html",
+		"exemplo":" es- 'La pared rayada está rajada al medio' pt- A parede riscada está rachada ao meio",
+		"observacoes":" Pronúncia similar. Rachada em português se traduz como 'rajada' em espanhol"
+	},
+	
+	{
+		"origen":"Ralo",
+		"traducao":"Ralo",
+		"imagem":"ralo",
+		"definicao":"Pouco",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/12/ralo.html",
+		"exemplo":" es- 'Su cabelo ya era ralo y el resto se fue por la rejilla' pt- Seu cabelo já era pouco e o resto se foi pelo ralo",
+		"observacoes":" Ralo em português se traduz como 'rejilla' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Ratazana",
+		"traducao":"Rata sana",
+		"imagem":"ratasana",
+		"definicao":"Ratazana saudável",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/12/ratazana-vs-rata-sana.html",
+		"exemplo":" es- 'Eso si es una rata sana' pt- Isso sim é uma ratazana saudável",
+		"observacoes":" Pronúncia similar. Ratazana em português se traduz como 'rata' em espanhol"
+	},
+	
+	{
+		"origen":"Rato",
+		"traducao":"Rato",
+		"imagem":"rato",
+		"definicao":"Pequeno espaço de tempo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/12/rato.html",
+		"exemplo":" es- 'Esperemos un rato y talvez el ratón se vaya' pt- Esperemos um pouco e talvez o rato vá embora",
+		"observacoes":" Rato em português se traduz como 'ratón' em espanhol"
+	},
+	
+	{
+		"origen":"Recorrer",
+		"traducao":"Recorrer",
+		"imagem":"recorrer",
+		"definicao":"Percorrer",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2016/12/recorrer.html",
+		"exemplo":" es- 'Tenes mucho que recorrer para que te dejen hacer un apelo al caso' pt- Tens muito que percorrer para que te deixem recorrer ao caso",
+		"observacoes":" Recorrer em português se traduz como 'apelar' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Risco",
+		"traducao":"Risco",
+		"imagem":"risco",
+		"definicao":"Penhasco íngreme e perigoso",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/risco.html",
+		"exemplo":" es- 'El riesgo de caerse del risco es bien alto' pt- O risco de cair do penahsco é bem alto",
+		"observacoes":" Risco em português se traduz como 'riesgo' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Rombo",
+		"traducao":"Rombo",
+		"imagem":"rombo",
+		"definicao":"Losango",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/rombo.html",
+		"exemplo":" es- 'Hay un agujero en la pared que parece un rombo' pt- Tem um rombo na parede que parece um losango",
+		"observacoes":" Rombo em português se traduz como 'agujero' em espanhol"
+	},
+	
+	{
+		"origen":"Rubro",
+		"traducao":"Rubro",
+		"imagem":"rubro",
+		"definicao":"Ramo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/en-brasil-rubro-es-un-color-rojo-fuerte.html",
+		"exemplo":" es- 'En el rubro de periodismo no aceptan el color rojo intenso' pt- No ramo do jornalismo não aceitam a cor rubra",
+		"observacoes":" Rubro em português se traduz como 'rojo intenso' em espanhol"
+	},
+	
+	{
+		"origen":"Ruiva",
+		"traducao":"Rubia",
+		"imagem":"rubia",
+		"definicao":"Loira",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/ruiva-vs-rubia.html",
+		"exemplo":" es- 'La rubia y la pelirroja' pt- A loira e a ruiva",
+		"observacoes":" Pronúncia similar. Ruiva em português se traduz como 'pelirroja' em espanhol"
+	},
+	
+	{
+		"origen":"Saco",
+		"traducao":"Saco",
+		"imagem":"saco",
+		"definicao":"Paletó",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2014/04/saco.html",
+		"exemplo":" ",
+		"observacoes":" Saco em português se traduz como 'testículos' ou 'bolas' em espanhol"
+	},
+	
+	{
+		"origen":"Salada",
+		"traducao":"Salada",
+		"imagem":"salada",
+		"definicao":"Salgada",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/salada.html",
+		"exemplo":" es- 'La ensalada está muy salada' pt- A salada está muito salgada",
+		"observacoes":" Salada em português se traduz como 'ensalada' em espanhol"
+	},
+	
+	{
+		"origen":"Salsa",
+		"traducao":"Salsa",
+		"imagem":"salsa",
+		"definicao":"Molho, gênero musical",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/salsa.html",
+		"exemplo":" es- 'Bailemos está salsa y después vamos a comer fideos con perejil' pt- Dancemos está salsa e depois comeremos macarrão com salsa",
+		"observacoes":" Salsa em português se traduz como 'perejil' em espanhol"
+	},
+	
+	{
+		"origen":"Salto",
+		"traducao":"Salto",
+		"imagem":"salto",
+		"definicao":"Pulo (saltar/pular)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/salto.html",
+		"exemplo":" es- 'Como hiciste ese salto usando zapatos con tacos?' pt- Como fizeste esse pulo usando salto?",
+		"observacoes":" Salto em português se traduz como 'taco' em espanhol"
+	},
+	
+	{
+		"origen":"Seta",
+		"traducao":"Seta",
+		"imagem":"seta",
+		"definicao":"Cogumelo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/seta.html",
+		"exemplo":" es- 'La flecha apunta hacia la seta' pt- A seta aponta até o cogumelo",
+		"observacoes":" Seta em português se traduz como 'flecha' em espanhol"
+	},
+	
+	{
+		"origen":"Sobremesa",
+		"traducao":"Sobremesa",
+		"imagem":"sobremesa",
+		"definicao":"Bate-papo descontraído depois de uma refeição",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/sobremesa.html",
+		"exemplo":" es- Después del postre hacemos la sobremesa' pt- Depois da sobremesa fazemos o bate-papo",
+		"observacoes":" Sobremesa em português se traduz como 'postre' em espanhol"
+	},
+	
+	{
+		"origen":"Sobrenome",
+		"traducao":"Sobrenombre",
+		"imagem":"sobrenombre",
+		"definicao":"Apelido",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/01/sobrenome-vs-sobrenombre.html",
+		"exemplo":" es- 'Mi apellido es Sánchez y mi sobrenombre es Edu' pt- Meu sobrenome é Sánchez e meu apelido é Edu",
+		"observacoes":" Pronúncia similar. Sobrenome em português se traduz como 'apellido' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Sorvete",
+		"traducao":"Sorbete",
+		"imagem":"sorbete",
+		"definicao":"Canudo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/sorvete-vs-sorbete.html",
+		"exemplo":" es- 'Nunca vi alguien tomar helado con sorbete' pt- Nunca vi alguém tomar sorvete com canudo",
+		"observacoes":" Pronúncia similar. A V e a B se pronunciam igual em espanhol. Sorvete em português se traduz como 'helado' em espanhol"
+	},
+	
+	{
+		"origen":"Sucesso",
+		"traducao":"Suceso",
+		"imagem":"suceso",
+		"definicao":"Acontecimento, ocorrência",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/sucesso-vs-suceso.html",
+		"exemplo":" es- 'El suceso será su triunfo' pt- O acontecimento será seu sucesso",
+		"observacoes":" Sucesso em português se traduz como 'triunfo' ou 'éxito' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Surdo",
+		"traducao":"Zurdo",
+		"imagem":"zurdo",
+		"definicao":"Canhoto",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/surdo-vs-zurdo.html",
+		"exemplo":" es- 'El que toca el tambor es zurdo' pt- O que toca o surdo é canhoto",
+		"observacoes":" Surdo em português se traduz como 'Sordo' em espanhol"
+	},
+	
+	{
+		"origen":"Talher",
+		"traducao":"Taller",
+		"imagem":"taller",
+		"definicao":"Oficina",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/talher-vs-taller.html",
+		"exemplo":" es- 'Me olvide los cubiertos en el taller' pt- Esqueci os talheres na oficina",
+		"observacoes":" Pronúncia similar. Talher em português se traduz como 'cubierto' em espanhol"
+	},
+	
+	{
+		"origen":"Tansa",
+		"traducao":"Tanza",
+		"imagem":"tanza",
+		"definicao":"Fio de plástico",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/tansa-vs-tanza.html",
+		"exemplo":" ",
+		"observacoes":" Tansa em português se traduz como 'tonto/a' em espanhol"
+	},
+	
+	{
+		"origen":"Tapado",
+		"traducao":"Tapado",
+		"imagem":"tapado",
+		"definicao":"Roupa de abrigo comprida (geralmente feminina)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/tapado.html",
+		"exemplo":" es- 'Es muy estúpido para vestirse con ese tapado de mujer' pt- É muito tapado para se vestir com essa roupa de mulher",
+		"observacoes":" Tapado em português se traduz como 'estúpido' em espanhol"
+	},
+	
+	{
+		"origen":"Tarado",
+		"traducao":"Tarado",
+		"imagem":"tarado",
+		"definicao":"Idiota, tolo, palerma, bobo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/tarado.html",
+		"exemplo":" es- 'No solo es tarado como también es degenerado' pt- Não só é idiota como também é tarado",
+		"observacoes":" Tarado em português se traduz como 'degenerado' em espanhol"
+	},
+	
+	{
+		"origen":"Tela",
+		"traducao":"Tela",
+		"imagem":"tela",
+		"definicao":"Tecido",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/tela.html",
+		"exemplo":" es- 'Puse una tela al lado de la pantalla' pt- Coloquei um tecido ao lado da tela",
+		"observacoes":" Tela em português se traduz como 'pantalla' em espanhol"
+	},
+	
+	{
+		"origen":"Termo",
+		"traducao":"Termo",
+		"imagem":"termo",
+		"definicao":"Garrafa térmica, jarra",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/termo.html",		
+		"exemplo":" es- 'Firme este término para retirar su termo nuevo' pt- Assine este termo para retirar sua nova garrafa térmica",
+		"observacoes":" Termo em português se traduz como 'término' em espanhol"
+	},
+	
+	{
+		"origen":"Tesão",
+		"traducao":"Tesón",
+		"imagem":"teson",
+		"definicao":"Perseverança ou decisão",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/tesao-vs-teson.html",
+		"exemplo":" ",
+		"observacoes":" Pronúncia similar. Tesão em português se traduz como 'deseo sexual' em espanhol"
+	},
+	
+	{
+		"origen":"Testa",
+		"traducao":"Testa",
+		"imagem":"testa",
+		"definicao":"Cabeça",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/testa.html",
+		"exemplo":" es- 'El shampoo que tenes en la testa se está cayendo para el lado de tu frente' pt- O shampoo que tens na cabeça está caindo para o lado da tua testa",
+		"observacoes":" Testa em português se traduz como 'frente' em espanhol"
+	},
+	
+	{
+		"origen":"Torcida",
+		"traducao":"Torcida",
+		"imagem":"torcida",
+		"definicao":"Torta",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/torcida.html",
+		"exemplo":" es- 'La hinchada estaba arriba de una barra de metal torcida' pt- A torcida estava em cima de uma barra de metal torta",
+		"observacoes":" Torcida em português se traduz como 'hinchada' em espanhol"
+	},
+	
+	{
+		"origen":"Traído",
+		"traducao":"Traído",
+		"imagem":"traido",
+		"definicao":"Conjugação do verbo traer (trazer)",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/traido.html",
+		"exemplo":" es- 'El policia ha traído al hombre traicionado' pt- O policial trouxe o homem traído",
+		"observacoes":" Traido em português se traduz como 'traicionado' em espanhol"
+	},
+	
+	
+	{
+		"origen":"Tufo",
+		"traducao":"Tufo",
+		"imagem":"tufo",
+		"definicao":"Cheiro ruim",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/tufo.html",
+		"exemplo":" es- 'Este racimo tiene un tufo terrible' pt- Este tufo tem um cheiro terrível",
+		"observacoes":" Tufo em português se traduz como 'racimo' em espanhol"
+	},
+	
+	{
+		"origen":"Vaga",
+		"traducao":"Vaga",
+		"imagem":"vaga",
+		"definicao":"Pessoa que não gosta do trabalho ou esforço, preguiçosa",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/vaga.html",
+		"exemplo":" es- 'Las personas vagas reclamam que no hay vacantes en el mercado de trabajo' pt- As pessoas preguiçosas reclamam que não há vagas no mercado de trabalho",
+		"observacoes":" Vaga em português se traduz como 'vacante' em espanhol"
+	},
+	
+	{
+		"origen":"Vaso",
+		"traducao":"Vaso",
+		"imagem":"vaso",
+		"definicao":"Copo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/vaso.html",
+		"exemplo":" es- 'Voy a poner água en vaso para tirarle al florero' pt- Vou por água no copo para jogar no vaso",
+		"observacoes":" Vaso em português se traduz como 'florero' em espanhol"
+	},
+	
+	{
+		"origen":"Velho",
+		"traducao":"Vello",
+		"imagem":"vello",
+		"definicao":"Pêlo",
+		"doblog":"http://bloghispanoluso.blogspot.com.br/2017/02/velho-vs-vello.html",
+		"exemplo":" es- 'El viejo tiene vellos blancos' pt- O velho tem pêlos brancos",
+		"observacoes":" Pronúncia similar. Velho em português se traduz como 'viejo' em espanhol"
+	}
+
+	  
+	  
+    ];
+
+const container = document.getElementById('conteudo');
+
+    dados.forEach(item => {
+      const card = document.createElement('div');
+      card.className = 'card';
+
+      const tradutorURL = `https://translate.google.com/?sl=es&tl=pt&text=${encodeURIComponent(item.traducao)}&op=translate`;
+
+      card.innerHTML = `
+        ${item.imagem ? `<img src="img_esp/${item.imagem}.jpg" alt="${item.origen}" class="card-img">` : ''}
+        <div class="card-content">
+          <h2>
+            <span style="color: black;">${item.origen}</span> → 
+            <a href="${tradutorURL}" target="_blank" rel="noopener noreferrer" title="Ouvir pronúncia">${item.traducao}</a>
+            <a href="${tradutorURL}" target="_blank" rel="noopener noreferrer" class="speaker-icon" title="Ouvir pronúncia">🔊</a>
+          </h2>
+          <p><strong>Definição:</strong> ${item.definicao}</p>
+          <!--${item.exemplo ? `<p><strong>Exemplo:</strong> ${item.exemplo}</p>` : ''}-->
+          ${item.observacoes ? `<p><strong>Observações:</strong> ${item.observacoes}</p>` : ''}
+          <!--${item.doblog ? `<p class="source"><a href="${item.doblog}" target="_blank">Fonte: Blog HispanoLuso</a></p>` : ''}-->
+		  <p align='right'><small><i>Falsos Cognatos em Português e Espanhol</i></small></p>
+        </div>
+      `;
+
+      container.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
