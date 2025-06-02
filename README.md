@@ -1,2 +1,2 @@
- 
+
 # hispanoluso.github.io
